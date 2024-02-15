@@ -47,42 +47,54 @@ public class Student {
      */
     public void updateFeesPaid(int fees){
         feesPaid+=fees;
+        School.updateTotalMoneyEarned(feesPaid);
     }
 
     /**
      *
-     * @return id of the student
+     * @return id of the student.
      */
     public int getId() {
         return id;
     }
     /**
      *
-     * @return  name of the student
+     * @return  name of the student.
      */
     public String getName() {
         return name;
     }
     /**
      *
-     * @return grade of the student
+     * @return grade of the student.
      */
     public int getGrade() {
         return grade;
     }
     /**
      *
-     * @return fees paid by the student
+     * @return fees paid by the student.
      */
     public int getFeesPaid() {
         return feesPaid;
     }
     /**
      *
-     * @return the Total fees of the student
+     * @return the Total fees of the student.
      */
     public int getFeesTotal() {
         return feesTotal;
     }
 
+    /**
+     *
+     * @return the remaining.
+     */
+    public int getRemainingFees(){
+        return feesTotal-feesPaid;
+    }
+    @Override
+    public String toString(){
+        return "Student name " + name + " total fees paid so far $" + feesPaid;
+    }
 }
