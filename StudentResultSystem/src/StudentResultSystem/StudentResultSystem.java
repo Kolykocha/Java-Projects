@@ -47,6 +47,7 @@ public class StudentResultSystem extends javax.swing.JFrame {
     int q,i;
     
     public StudentResultSystem() {
+        
         initComponents();  
         
     }
@@ -1336,10 +1337,10 @@ private JFrame frame;
                     + "Module1,Module2,Module3,Module4,Module5,Module6,Module7,Module8,"
                     + "Score1,Score2,Score3,Score4,Score5,Score6,Score7,Score8,"
                     + "TotalScore,Ranking,Date)"
-                    + "value("+jtxtStudentID.getText()+","+jtxtFirstname.getText()+
-                    ","+jtxtSurname.getText()+","+jtxtAddress.getText()+
-                             ","+(String) jcboGender.getSelectedItem()+","+jtxtDOB.getText()
-                            + ","
+                    + "value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"); 
+                        /*    +jtxtStudentID.getText()+","+jtxtFirstname.getText()+","
+                            +jtxtSurname.getText()+","+jtxtAddress.getText() +","
+                            +(String) jcboGender.getSelectedItem()+","+jtxtDOB.getText()+ ","
                             + jtxtMobile.getText()+","+jtxtEmail.getText()+","
                             + (String) jcboCourse.getSelectedItem()+","+jtxtCourseCode.getText()+","
                             + (String) jcboModule1.getSelectedItem()+","+(String) jcboModule2.getSelectedItem()+","
@@ -1351,8 +1352,9 @@ private JFrame frame;
                             + (String) txtScore5.getText()+","+(String) txtScore6.getText()+","
                             + (String) txtScore7.getText()+","+(String) txtScore8.getText()+","
                             + (String) jtxtTotalScore.getText()+","+jtxtRanking.getText()+","
-                            + jtxtDate.getText()+")"); 
-           /* pst.setString(1,jtxtStudentID.getText());
+                            + jtxtDate.getText()*/
+                  
+            pst.setString(1,jtxtStudentID.getText());
             pst.setString(2,jtxtFirstname.getText());
             pst.setString(3,jtxtSurname.getText());
             pst.setString(4,jtxtAddress.getText());
@@ -1383,7 +1385,7 @@ private JFrame frame;
             
             pst.setString(27,(String) jtxtTotalScore.getText());
             pst.setString(28,(String) jtxtRanking.getText());
-            pst.setString(29,(String) jtxtDate.getText());*/
+            pst.setString(29,(String) jtxtDate.getText());
             
             pst.executeUpdate();
             JOptionPane.showMessageDialog(this, "Student Result Updated");
